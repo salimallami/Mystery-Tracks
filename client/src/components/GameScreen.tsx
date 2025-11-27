@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
 import { useSocket } from '../context/SocketContext';
 
 const GameScreen: React.FC = () => {
-    const { socket, room } = useSocket();
+    const { room } = useSocket();
     const [timeLeft, setTimeLeft] = useState(0);
 
     useEffect(() => {
@@ -51,7 +51,7 @@ const GameScreen: React.FC = () => {
                 return `https://open.spotify.com/embed/track/${pathParts[trackIndex + 1]}`;
             }
             return url.replace('open.spotify.com', 'open.spotify.com/embed');
-        } catch (e) {
+        } catch (_) {
             return url;
         }
     };

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSocket } from '../context/SocketContext';
 import TrackSubmission from '../components/TrackSubmission';
 import GameScreen from '../components/GameScreen';
@@ -8,7 +8,7 @@ import ResultsScreen from '../components/ResultsScreen';
 import GameOverScreen from '../components/GameOverScreen';
 
 const Lobby: React.FC = () => {
-    const { roomId } = useParams();
+
     const { socket, room, setRoom } = useSocket();
     const navigate = useNavigate();
 
